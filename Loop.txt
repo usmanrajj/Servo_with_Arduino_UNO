@@ -1,0 +1,43 @@
+/*
+Full vedio available on youtube at Rajj Engineering 
+
+https://youtu.be/GcG9j9takFY
+
+Library for servo motor :-
+https://github.com/arduino-libraries/Servo
+
+Any query? comment it on our Youtube Vedio.
+
+code 2
+*/
+#include <Servo.h>		// Servo Library
+Servo servo;
+void setup()
+{
+servo.attach(6);		// connect servo with pin 6
+servo.write(0);			// initial angle is 0
+delay(2000);			// wait for 2 second here
+Serial.begin(9600);		// initialize serial monitor
+}
+void loop()
+{
+int angle;
+while (angle<=179)		// loop will run until angle becomes = 180
+{
+servo.write(angle);		// servo moves 0 to 180 
+Serial.print("Angle = ");
+Serial.println(angle);		// print the angle on serial monitor
+delay(10);			// Time taken between each degree is 10 milisecond
+angle++;			// increment
+}
+delay(1000);			// wait here for 1 second
+while (angle>=0)		// loop will run until angle is greater than equal to 0
+{
+servo.write(angle);		// servo moves 180 to 0
+Serial.print("Angle = ");
+Serial.println(angle);		// print the angle on serial monitor
+delay(10);			// Time taken between each degree is 10 milisecond
+angle--;			// Decrement
+}
+delay(1000);			// wait here for 1 second than start again this program
+}

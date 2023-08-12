@@ -1,0 +1,31 @@
+/*
+Full vedio available on youtube at Rajj Engineering
+
+https://youtu.be/GcG9j9takFY
+
+Library for servo motor :-
+https://github.com/arduino-libraries/Servo
+
+Any query? comment it on our Youtube Vedio.
+
+code 1
+*/
+
+#include <Servo.h> 		   // Library for servo motor
+Servo servo;	  
+void setup()
+{
+servo.attach(6);  		   // attach servo with pin 6
+servo.write(0);    		   // initially angle is 0
+Serial.begin(9600);
+delay(2000);	   		   // stop here for 2 second
+}
+void loop()
+{
+servo.write(90);  		   // Angle is 90
+Serial.println("Angle = 90");	   // print this line on serial monitor
+delay(1000);			   // Stop here for 1 second
+servo.write(0);			   // Angle is 0 
+Serial.println("Angle = 0");	   // print this line on serial monitor
+delay(1000);			   // stop here for 1 second
+}				   // loop will start again 
