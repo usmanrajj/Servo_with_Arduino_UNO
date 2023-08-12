@@ -1,1 +1,1 @@
-# Servo_with_Srduino_UNO
+# Servo_with_Arduino_UNO
